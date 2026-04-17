@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAUD Riyadhul Jannah</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animasi -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <!-- Swiper Slider -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+<!-- HERO -->
+<section class="text-center py-16 bg-gradient-to-b from-green-700 to-green-400 text-white relative">
+
+  <div class="absolute top-5 right-5 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold shadow animate-bounce">
+    One Day Service
+  </div>
+
+  <img src="logo.png" class="w-28 mx-auto mb-4 drop-shadow-lg" data-aos="zoom-in">
+
+  <h1 class="text-4xl font-bold" data-aos="fade-up">PAUD RIYADHUL JANNAH</h1>
+  <p class="mt-2 text-lg" data-aos="fade-up">PPDB 2026 / 2027</p>
+
+  <p class="mt-4 max-w-xl mx-auto" data-aos="fade-up">
+    Mencetak generasi muslim berilmu & berakhlak mulia
+  </p>
+
+  <button onclick="wa()" 
+    class="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-full font-bold shadow hover:scale-110 transition">
+    DAFTAR SEKARANG
+  </button>
+</section>
+
+<!-- VISI MISI -->
+<section class="py-12 px-6 text-center">
+  <h2 class="text-2xl font-bold mb-4 text-green-700" data-aos="fade-up">Visi & Misi</h2>
+  <p class="max-w-2xl mx-auto" data-aos="fade-up">
+    Menjadi generasi muslim rabbani berlandaskan Al-Qur'an dan As-Sunnah sesuai manhaj salaf.
+  </p>
+</section>
+
+<!-- PROGRAM -->
+<section class="py-12 px-6 bg-white">
+  <h2 class="text-2xl font-bold text-center text-green-700 mb-8" data-aos="fade-up">
+    Program Unggulan
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+    <div class="card">📖 Tahsin & Tahfidz</div>
+    <div class="card">🔤 Huruf & Hijaiyah</div>
+    <div class="card">🔢 Pengenalan Angka</div>
+    <div class="card">🌍 Bahasa Arab & Inggris</div>
+    <div class="card">🕋 Manasik Haji</div>
+    <div class="card">🏹 Berkuda & Memanah</div>
+    <div class="card">🚌 Fieldtrip</div>
+    <div class="card">👨‍👩‍👧 Family Project</div>
+    <div class="card">🔬 Science Experiment</div>
+
+  </div>
+</section>
+
+<style>
+.card {
+  background:#f0fdf4;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+</style>
+
+<!-- GALERI -->
+<section class="py-12 bg-gray-100">
+  <h2 class="text-2xl font-bold text-center mb-6 text-green-700" data-aos="fade-up">
+    Kegiatan Anak
+  </h2>
+
+  <div class="swiper mySwiper max-w-4xl mx-auto" data-aos="zoom-in">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="foto1.jpg" class="rounded-xl"></div>
+      <div class="swiper-slide"><img src="foto2.jpg" class="rounded-xl"></div>
+      <div class="swiper-slide"><img src="foto3.jpg" class="rounded-xl"></div>
+      <div class="swiper-slide"><img src="foto4.jpg" class="rounded-xl"></div>
+      <div class="swiper-slide"><img src="foto5.jpg" class="rounded-xl"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIAYA -->
+<section class="py-12 px-6 bg-yellow-50 text-center">
+  <h2 class="text-2xl font-bold text-green-700 mb-4">Biaya Sekolah</h2>
+
+  <div class="bg-white p-6 rounded-xl shadow max-w-md mx-auto">
+    <p class="text-lg">💰 Uang Masuk: <b>Rp 4.000.000</b></p>
+    <p class="mt-2">📅 SPP: Rp 350.000 / bulan</p>
+    <p class="mt-2">📝 Pendaftaran: Rp 150.000</p>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="px-6 pb-10">
+  <iframe 
+    src="https://www.google.com/maps?q=PAUD%20Riyadhul%20Jannah%20Depok&output=embed"
+    class="w-full h-64 rounded-xl shadow">
+  </iframe>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-green-700 text-white text-center p-4">
+    <p>Dibawah Yayasan Ibnu Abi Hatim</p>
+</footer>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/6282298690334"
+   class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:scale-110 transition">
+   💬 Chat Admin
+</a>
+
+<!-- SCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+AOS.init();
+
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  autoplay: { delay: 2500 }
+});
+
+function wa(){
+  let text = "Assalamualaikum, saya ingin mendaftar PAUD Riyadhul Jannah";
+  window.open("https://wa.me/6282298690334?text=" + encodeURIComponent(text));
+}
+</script>
+
+</body>
+</html>
