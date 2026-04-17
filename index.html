@@ -17,10 +17,43 @@
 
 <body class="font-sans bg-gray-50">
 
-<!-- HERO -->
-<section class="text-center py-16 bg-gradient-to-b from-green-700 to-green-400 text-white relative">
+ <body class="font-sans bg-gray-50">
 
-  <div class="absolute top-5 right-5 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold shadow animate-bounce">
+<!-- NAVBAR PREMIUM -->
+<nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    
+    <div class="flex items-center gap-2">
+      <img src="logo.png" class="w-10">
+      <span class="font-bold text-white">PAUD RJ</span>
+    </div>
+
+    <div class="hidden md:flex gap-6 font-medium text-white">
+      <a href="#home">Home</a>
+      <a href="#program">Program</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#biaya">Biaya</a>
+      <a href="#map">Lokasi</a>
+    </div>
+
+    <button id="menuBtn" class="md:hidden text-white text-2xl">
+      ☰
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden flex-col bg-white text-black text-center py-4 space-y-3 shadow-md">
+    <a href="#home">Home</a>
+    <a href="#program">Program</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#biaya">Biaya</a>
+    <a href="#map">Lokasi</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="pt-24 text-center py-16 bg-gradient-to-b from-green-700 to-green-400 text-white relative">
+
+  <div class="absolute top-24 right-5 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold shadow animate-bounce">
     One Day Service
   </div>
 
@@ -48,7 +81,7 @@
 </section>
 
 <!-- PROGRAM -->
-<section class="py-12 px-6 bg-white">
+<section id="program" class="py-12 px-6 bg-white">
   <h2 class="text-2xl font-bold text-center text-green-700 mb-8" data-aos="fade-up">
     Program Unggulan
   </h2>
@@ -83,7 +116,7 @@
 </style>
 
 <!-- GALERI -->
-<section class="py-12 bg-gray-100">
+<section id="galeri" class="py-12 bg-gray-100">
   <h2 class="text-2xl font-bold text-center mb-6 text-green-700" data-aos="fade-up">
     Kegiatan Anak
   </h2>
@@ -100,7 +133,7 @@
 </section>
 
 <!-- BIAYA -->
-<section class="py-12 px-6 bg-yellow-50 text-center">
+<section id="biaya" class="py-12 px-6 bg-yellow-50 text-center">
   <h2 class="text-2xl font-bold text-green-700 mb-4">Biaya Sekolah</h2>
 
   <div class="bg-white p-6 rounded-xl shadow max-w-md mx-auto">
@@ -111,7 +144,7 @@
 </section>
 
 <!-- MAP -->
-<section class="px-6 pb-10">
+<section id="map" class="px-6 pb-10">
   <iframe 
     src="https://www.google.com/maps?q=PAUD%20Riyadhul%20Jannah%20Depok&output=embed"
     class="w-full h-64 rounded-xl shadow">
@@ -146,6 +179,34 @@ function wa(){
   window.open("https://wa.me/6282298690334?text=" + encodeURIComponent(text));
 }
 </script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+window.addEventListener("scroll", function () {
+  const navbar = document.getElementById("navbar");
+
+  if (window.scrollY > 50) {
+    navbar.classList.add("bg-white", "shadow");
+
+    navbar.querySelectorAll("a, span").forEach(el => {
+      el.classList.remove("text-white");
+      el.classList.add("text-black");
+    });
+
+  } else {
+    navbar.classList.remove("bg-white", "shadow");
+
+    navbar.querySelectorAll("a, span").forEach(el => {
+      el.classList.add("text-white");
+      el.classList.remove("text-black");
+    });
+  }
+});
+</script>
 </body>
 </html>
