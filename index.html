@@ -23,24 +23,33 @@
 <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
     
+    <!-- LOGO -->
     <div class="flex items-center gap-2">
       <img src="logo.png" class="w-10">
       <span class="font-bold text-white">PAUD RJ</span>
     </div>
 
-    <div class="hidden md:flex gap-6 font-medium text-white">
-      <a href="#home">Home</a>
-      <a href="#program">Program</a>
-      <a href="#galeri">Galeri</a>
-      <a href="#biaya">Biaya</a>
-      <a href="#map">Lokasi</a>
+    <!-- MENU DESKTOP -->
+    <div class="hidden md:flex gap-3 font-medium text-white items-center">
+      <a href="#home" class="nav-link">Home</a>
+      <span class="text-gray-300">|</span>
+      <a href="#program" class="nav-link">Program</a>
+      <span class="text-gray-300">|</span>
+      <a href="#galeri" class="nav-link">Galeri</a>
+      <span class="text-gray-300">|</span>
+      <a href="#biaya" class="nav-link">Biaya</a>
+      <span class="text-gray-300">|</span>
+      <a href="#map" class="nav-link">Lokasi</a>
     </div>
 
+    <!-- HAMBURGER -->
     <button id="menuBtn" class="md:hidden text-white text-2xl">
       ☰
     </button>
+
   </div>
 
+  <!-- MENU MOBILE -->
   <div id="mobileMenu" class="hidden flex-col bg-white text-black text-center py-4 space-y-3 shadow-md">
     <a href="#home">Home</a>
     <a href="#program">Program</a>
@@ -180,6 +189,7 @@ function wa(){
 }
 </script>
 <script>
+// MOBILE MENU
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -187,6 +197,7 @@ menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
+// NAVBAR SCROLL EFFECT
 window.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
 
@@ -207,6 +218,30 @@ window.addEventListener("scroll", function () {
     });
   }
 });
+
+// ACTIVE MENU SCROLL
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
 </script>
+
 </body>
 </html>
